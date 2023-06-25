@@ -83,7 +83,7 @@ resource "azurerm_storage_blob" "newest" {
 }
 
 #
-# Adding Azure CDN stuff to my site/tenant/setup
+# Adding Azure CDN stuff to my tenant
 #
 
 resource "azurerm_cdn_profile" "cdn_profile" {
@@ -93,38 +93,38 @@ resource "azurerm_cdn_profile" "cdn_profile" {
   resource_group_name = azurerm_resource_group.rg.name
 }
 
-resource "azurerm_cdn_endpoint" "cdn_endpoint" {
-  name                = var.cdn_endpoint
-  profile_name        = azurerm_cdn_profile.cdn_profile.name
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-
-  origin {
-    name      = var.origin_server
-    host_name = var.hostname
-  }
-}
+#resource "azurerm_cdn_endpoint" "cdn_endpoint" {
+#  name                = var.cdn_endpoint
+#  profile_name        = azurerm_cdn_profile.cdn_profile.name
+#  location            = azurerm_resource_group.rg.location
+#  resource_group_name = azurerm_resource_group.rg.name
+#
+#  origin {
+#    name      = var.origin_server
+#    host_name = var.hostname
+#  }
+#}
 
 resource "azurerm_dns_zone" "zone" {
   name                = var.azure_dns_zone
   resource_group_name = azurerm_resource_group.rg.name
 }
 
-resource "azurerm_dns_cname_record" "cname_record" {
-  name                  = var.azurerm_dns_cname
-  zone_name             = var.azure_dns_zone
-  resource_group_name   = var.resource_group_name
-  ttl                   = 300
-  record                = "www" 
-}
+#resource "azurerm_dns_cname_record" "cname_record" {
+#  name                  = var.azurerm_dns_cname
+#  zone_name             = var.azure_dns_zone
+#  resource_group_name   = var.resource_group_name
+#  ttl                   = 300
+#  record                = "www" 
+#}
 
-resource "azurerm_cdn_endpoint_custom_domain" "custom_domain" {
-  name                = "customdomain"
-  cdn_endpoint_id     = azurerm_cdn_endpoint.cdn_endpoint.id
-  host_name           = var.azurerm_dns_cname
-  cdn_managed_https {
-    certificate_type = "Dedicated"
-    protocol_type    = "ServerNameIndication"
-    tls_version      = "TLS12" 
-  }  
-}
+#resource "azurerm_cdn_endpoint_custom_domain" "custom_domain" {
+#  name                = "customdomain"
+#  cdn_endpoint_id     = azurerm_cdn_endpoint.cdn_endpoint.id
+#  host_name           = var.azurerm_dns_cname
+#  cdn_managed_https {
+#    certificate_type = "Dedicated"
+#    protocol_type    = "ServerNameIndication"
+#    tls_version      = "TLS12" 
+#  }  
+#}

@@ -2,12 +2,12 @@
 
 variable "resource_group_name" {
   type    = string
-  default = "cloud_newest"
+  default = "pitels_cloud_rg"
 }
 
 variable "storage_account_name" {
   type    = string
-  default = "cloudneweststorage"
+  default = "pitelstorage"
 }
 
 variable "azure_dns_zone" {
@@ -22,12 +22,12 @@ variable "location" {
 
 variable "cdn_profile_name" {
   type    = string
-  default = "cloudcdnprofile"
+  default = "pitelscdnprofile"
 }
 
 variable "cdn_endpoint" {
   type    = string
-  default = "cloudcdnendpoint"
+  default = "pitelscdnendpoint"
 }
 
 variable "origin_server" {

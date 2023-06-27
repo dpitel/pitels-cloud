@@ -23,10 +23,10 @@ provider "azurerm" {
 
 # Commented out resource group for the time being until I can pull it into the Terraform fold- not sure it got provisioned w/out t'form
 
-#resource "azurerm_resource_group" "rg" {
-#  name     = var.resource_group_name
-#  location = var.location
-#}
+resource "azurerm_resource_group" "rg" {
+  name     = var.resource_group_name
+  location = var.location
+}
 
 #
 # Create Storage Account

@@ -28,12 +28,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Install Azure CLI
-      run: |
-        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+    #- name: Install Azure CLI
+    #  run: |
+    #    curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
       
-    - name: AZ CLI Version Check
-      run: az --version
+    #- name: AZ CLI Version Check
+    #  run: az --version
          
     - name: 'Terraform Init'
       uses: hashicorp/terraform-github-actions@master

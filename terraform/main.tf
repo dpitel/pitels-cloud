@@ -23,7 +23,7 @@ provider "azurerm" {
 
 # Commented out resource group for the time being until I can pull it into the Terraform fold- not sure it got provisioned w/out t'form
 
-resource "azurerm_resource_group" "rg" {
+resource "azurerm_resource_group" "rg1" {
    name = "pitels_cloud_rg"
    location = "eastus"
 }

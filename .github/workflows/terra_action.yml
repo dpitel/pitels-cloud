@@ -44,7 +44,7 @@ jobs:
 
     - name: Import Resource Group
       run: |
-        terraform import azurerm_resource_group.rg1 /subscriptions/06e22377-2c09-458d-a96a-99dc6dad2079/resourceGroups/pitels_cloud_rg pitels_cloud_rg
+        terraform import azurerm_resource_group.rg1 "/subscriptions/06e22377-2c09-458d-a96a-99dc6dad2079/resourceGroups/pitels_cloud_rg pitels_cloud_rg" "pitels_cloud_rg"
       working-directory: ./terraform    
 
     #- name: Import Resource Group

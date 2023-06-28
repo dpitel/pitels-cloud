@@ -42,13 +42,14 @@ jobs:
         tf_actions_subcommand: 'init'
         tf_actions_working_dir: "./terraform"
 
-    - name: 'Terraform Import'
+    - name: Import Resource Group
       uses: hashicorp/terraform-github-actions@master
       with:
         tf_actions_version: 1.4.6
         tf_actions_subcommand: 'import'
         tf_actions_working_dir: "./terraform"
-        tf_actions_arguments: 'azurerm_resource_group.pitels_cloud_rg /subscriptions/06e22377-2c09-458d-a96a-99dc6dad2079/resourceGroups/pitels_cloud_rg'
+        tf_actions_arguments: 'azurerm_resource_group.pitels_cloud_rg /subscriptions/06e22377-2c09-458d-a96a-99dc6dad2079/resourceGroups/pitels_cloud_rg pitels_cloud_rg'
+      
  
     #- name: 'Terraform Format'
       #uses: hashicorp/terraform-github-actions@master

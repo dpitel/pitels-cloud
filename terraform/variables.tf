@@ -2,7 +2,7 @@
 
 variable "resource_group_name" {
   type    = string
-  default = "pitels_cloud_rg"
+  default = "pitelscloudrg"
 }
 
 variable "storage_account_name" {

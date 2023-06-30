@@ -117,13 +117,13 @@ resource "azurerm_dns_zone" "zone" {
   resource_group_name = azurerm_resource_group.rg.name
 }
 
-#resource "azurerm_dns_cname_record" "cname_record" {
-#  name                  = var.azurerm_dns_cname
-#  zone_name             = var.azure_dns_zone
-#  resource_group_name   = var.resource_group_name
-#  ttl                   = 300
-#  record                = "www" 
-#}
+resource "azurerm_dns_cname_record" "cname_record" {
+  name                  = var.azurerm_dns_cname
+  zone_name             = var.azure_dns_zone
+  resource_group_name   = var.resource_group_name
+  ttl                   = 300
+  record                = "www" 
+}
 
 #resource "azurerm_cdn_endpoint_custom_domain" "custom_domain" {
 #  name                = "customdomain"

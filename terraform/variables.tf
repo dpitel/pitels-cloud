@@ -37,7 +37,7 @@ variable "origin_server" {
 
 variable "hostname" {
   type    = string
-  default = "cloudneweststorage.z13.web.core.windows.net"
+  default = "pitelstorage.z13.web.core.windows.net"
 }
 
 variable "azurerm_dns_cname" {

@@ -100,17 +100,17 @@ resource "azurerm_cdn_profile" "cdn_profile" {
   resource_group_name = azurerm_resource_group.rg.name
 }
 
-#resource "azurerm_cdn_endpoint" "cdn_endpoint" {
-#  name                = var.cdn_endpoint
-#  profile_name        = azurerm_cdn_profile.cdn_profile.name
-#  location            = azurerm_resource_group.rg.location
-#  resource_group_name = azurerm_resource_group.rg.name
-#
-#  origin {
-#    name      = var.origin_server
-#    host_name = var.hostname
-#  }
-#}
+resource "azurerm_cdn_endpoint" "cdn_endpoint" {
+  name                = var.cdn_endpoint
+  profile_name        = azurerm_cdn_profile.cdn_profile.name
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+
+  origin {
+    name      = var.origin_server
+    host_name = var.hostname
+  }
+}
 
 resource "azurerm_dns_zone" "zone" {
   name                = var.azure_dns_zone

@@ -32,7 +32,7 @@ variable "cdn_endpoint" {
 
 variable "origin_server" {
   type    = string
-  default = "53023cdntest"
+  default = "pitelscloudorigin"
 }
 
 variable "hostname" {
